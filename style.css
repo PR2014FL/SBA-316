@@ -1,36 +1,42 @@
-.eggBasket {
+#eggBasket {
   height: 90vh;
   background-size: cover;
   padding: 75px;
   /* border: solid red; */
   background-image: url(./Assets/Hay-bale.png);
-  
+
   display: flex;
   justify-content: space-between;
-    flex-wrap:wrap;
-    
+  flex-wrap: wrap;
 }
 .egg {
-    height:200px;
-    width: 150px;
-    display: flex;
-    border: solid black;
-    background-image: url(/Assets/Golden-easter-egg-3d-rendering-illustration-on-transparent-background-PNG.png);
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  height: 200px;
+  position: relative;
+  width: 150px;
+  display: flex;
+  /* border: solid black; */
+  background-image: url(/Assets/Golden-easter-egg-3d-rendering-illustration-on-transparent-background-PNG.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
-    text-align: center;
+  text-align: center;
 }
 .btn {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 img {
-    height: 200px;
-    border:solid blue;
+  height: 200px;
+  /* border: solid blue; */
 }
 p {
-    border: solid black;
+  font-size: 12pt;
+}
+.eggLabel {
+  position: absolute;
+}
+.name {
+  height: 20px;
 }

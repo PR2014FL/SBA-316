@@ -46,15 +46,22 @@ darkModeToggleBttn.setAttribute("id", "toggleDarkMode");
 darkModeToggleBttn.innerHTML = "Dark Mode";
 body.children[0].nextElementSibling.appendChild(darkModeToggleBttn);
 
-let isDarkMode = false;
+let isDarkMode = false;// flag to trak the current mode
+const h1Element = document.querySelector("h1"); 
+let originalH1Text = h1Element.textContent;//store the original text
 
 darkModeToggleBttn.addEventListener("click", function (event) {
   isDarkMode = !isDarkMode;
 
   if (isDarkMode) {
     body.classList.add("dark-mode");
+    h1Element.classList.add("dark-mode");
+    h1Element.textContent = "600-800° Celsius (1112-1800° Fahrenheit)";
+    window.alert("Ooh, you messed up!");
   } else {
     body.classList.remove("dark-mode");
+    h1Element.classList.remove("dark-mode");
+    h1Element.textContent = originalH1Text;
   }
   event.stopPropagation();
 });

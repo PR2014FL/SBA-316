@@ -47,3 +47,7 @@ p {
   background-image: url(./Assets/Overlays.gif);
   background-size: cover;
 }
+h1.dark-mode {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 217, 0);
+}

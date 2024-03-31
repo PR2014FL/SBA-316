@@ -18,7 +18,24 @@ const addAnEgg = function () {
   egg.appendChild(nameLabel); //appened as child of egg div
 
   let pLabel = document.createElement("p"); //create the p tag
+  pLabel.setAttribute("id", "myTextNode"); // add id for add ! button
   nameLabel.appendChild(pLabel); //append p to nameLabel div
-  let textNode = document.createTextNode(prompt("Enter your name.")); //create text node placeholder
+
+  let textNode = document.createTextNode(prompt("Enter your first name.")); //create text node placeholder
   pLabel.appendChild(textNode); //append text node to p
 };
+
+//add an Exclamation button to each name on the eggs
+//add a button
+const body = document.querySelector("body");
+const exclamationBttn = document.createElement("button");
+exclamationBttn.innerHTML = "Add !";
+body.children[0].nextElementSibling.appendChild(exclamationBttn);
+//set eventlistener to add the exclamation to the end of each name by iterating each one
+exclamationBttn.addEventListener("click", function (event) {
+  for (const label of document.getElementsByClassName("eggLabel")) {
+    let labelText = label.textContent;
+    label.textContent = labelText + "!";
+  }
+  event.stopPropagation();
+});

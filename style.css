@@ -23,11 +23,12 @@
 h1 {
   text-align: center;
   color: blueviolet;
-  font-size:xxx-large;
+  font-size: xxx-large;
 }
 .btn {
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 img {
   height: 200px;
@@ -41,4 +42,8 @@ p {
 }
 .name {
   height: 20px;
+}
+.dark-mode {
+  background-image: url(./Assets/Overlays.gif);
+  background-size: cover;
 }

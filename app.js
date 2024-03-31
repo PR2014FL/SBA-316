@@ -39,3 +39,22 @@ exclamationBttn.addEventListener("click", function (event) {
   }
   event.stopPropagation();
 });
+
+//Dark-mode button
+const darkModeToggleBttn = document.createElement("button");
+darkModeToggleBttn.setAttribute("id", "toggleDarkMode");
+darkModeToggleBttn.innerHTML = "Dark Mode";
+body.children[0].nextElementSibling.appendChild(darkModeToggleBttn);
+
+let isDarkMode = false;
+
+darkModeToggleBttn.addEventListener("click", function (event) {
+  isDarkMode = !isDarkMode;
+
+  if (isDarkMode) {
+    body.classList.add("dark-mode");
+  } else {
+    body.classList.remove("dark-mode");
+  }
+  event.stopPropagation();
+});

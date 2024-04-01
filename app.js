@@ -46,9 +46,9 @@ darkModeToggleBttn.setAttribute("id", "toggleDarkMode");
 darkModeToggleBttn.innerHTML = "Dark Mode";
 body.children[0].nextElementSibling.appendChild(darkModeToggleBttn);
 
-let isDarkMode = false;// flag to trak the current mode
-const h1Element = document.querySelector("h1"); 
-let originalH1Text = h1Element.textContent;//store the original text
+let isDarkMode = false; // flag to trak the current mode
+const h1Element = document.querySelector("h1");
+let originalH1Text = h1Element.textContent; //store the original text
 
 darkModeToggleBttn.addEventListener("click", function (event) {
   isDarkMode = !isDarkMode;
@@ -57,11 +57,27 @@ darkModeToggleBttn.addEventListener("click", function (event) {
     body.classList.add("dark-mode");
     h1Element.classList.add("dark-mode");
     h1Element.textContent = "600-800° Celsius (1112-1800° Fahrenheit)";
-    window.alert("Ooh, you messed up!");
+    window.alert("Let's make Deviled Eggs.");
   } else {
     body.classList.remove("dark-mode");
     h1Element.classList.remove("dark-mode");
     h1Element.textContent = originalH1Text;
   }
   event.stopPropagation();
+});
+
+//subscribe section to add validation and regexp
+
+const emailInput = document.getElementById("emailInput");
+const submitBttn = document.getElementById("submitBttn");
+
+submitBttn.addEventListener("click", function (event) {
+  const emailValue = emailInput.value;
+  const valid = /[^@]+@[^@]+/ //tried the reg Exp below but it would be true for everything I think it doesn't work. So I'm using the usual email validation if it didn't have the type"email" as attribute. 
+    // /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.gmail\.com)$/;
+
+  if (!valid.test(emailValue)) {
+    window.alert("Please enter valid email address");
+    event.preventDefault();
+  }
 });
